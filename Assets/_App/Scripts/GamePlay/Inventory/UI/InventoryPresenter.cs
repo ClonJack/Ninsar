@@ -12,7 +12,6 @@ namespace Ninsar.Inventory
         
         [field: Header("Info")]
         [field: SerializeField] public TextView FilterLabel { get; private set; }
-        [field: SerializeField] public TextView StateLabel { get; private set; }
         [field: SerializeField] public TextView CapacityLabel { get; private set; }
         
         [field :Header("References")]
