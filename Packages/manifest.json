@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.mackysoft.serializereference-extensions": "https://github.com/mackysoft/Unity-SerializeReferenceExtensions.git?path=Assets/MackySoft/MackySoft.SerializeReferenceExtensions",
     "com.unity.ide.rider": "3.0.39",
     "com.unity.inputsystem": "1.18.0",
     "com.unity.render-pipelines.universal": "17.3.0",
