@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
-using Ninsar.Configs.Inventory.UI;
-using Ninsar.Locator;
+using Ninsar.Configs.Inventory;
 using UnityEngine;
 
 namespace Ninsar.Inventory
@@ -9,6 +8,7 @@ namespace Ninsar.Inventory
     {
         public readonly List<ItemView> Pool = new();
         private Transform _parent;
+        public int Count => Pool.Count;
         public void Create(Transform parent, int poolSize)
         {
             _parent = parent;
@@ -45,7 +45,5 @@ namespace Ninsar.Inventory
             }
             Pool.Clear();
         }
-
-        public int Count => Pool.Count;
     }
 }

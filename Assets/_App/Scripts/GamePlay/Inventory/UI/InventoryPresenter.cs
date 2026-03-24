@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
-using Ninsar.Locator;
 using UnityEngine;
-using UnrealTeam.GamePlay.UI;
 
 namespace Ninsar.Inventory
 {

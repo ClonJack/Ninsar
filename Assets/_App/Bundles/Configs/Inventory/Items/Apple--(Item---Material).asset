@@ -19,7 +19,6 @@ MonoBehaviour:
   <Description>k__BackingField: Apple
   Property:
   - rid: 5394016567550017602
-  - rid: 5394016567550017612
   references:
     version: 2
     RefIds:
@@ -28,8 +27,3 @@ MonoBehaviour:
       data:
         Heal: 5
         Time: 1
-    - rid: 5394016567550017612
-      type: {class: DamageComponent, ns: Ninsar.Inventory, asm: Assembly-CSharp}
-      data:
-        Min: 0
-        Max: 0

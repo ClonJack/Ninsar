@@ -1,8 +1,7 @@
-﻿using System;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
-namespace UnrealTeam.GamePlay.UI
+namespace Ninsar.Inventory
 {
     public class TextView : MonoBehaviour
     {

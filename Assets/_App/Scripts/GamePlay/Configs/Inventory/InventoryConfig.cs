@@ -1,7 +1,7 @@
 ﻿using Ninsar.Inventory;
 using UnityEngine;
 
-namespace Ninsar.Configs.Inventory.UI
+namespace Ninsar.Configs.Inventory
 {
     [CreateAssetMenu(fileName = "GamePrefabs", menuName = "Inventory/InventoryConfig", order = 0)]
     public class InventoryConfig : ScriptableObject

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Ninsar.Locator
+namespace Ninsar
 {
     public class ServicesLocator
     {

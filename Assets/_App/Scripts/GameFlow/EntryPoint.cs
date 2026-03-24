@@ -1,9 +1,6 @@
-﻿using System.Collections.Generic;
-using Ninsar.Configs.Inventory.UI;
+﻿using Ninsar.Configs.Inventory;
 using Ninsar.Inventory;
-using Ninsar.Locator;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Ninsar
 {

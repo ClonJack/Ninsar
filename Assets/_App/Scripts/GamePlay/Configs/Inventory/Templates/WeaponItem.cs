@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Ninsar.Inventory;
+using UnityEngine;
 
-namespace Ninsar.Inventory
+namespace Ninsar.Configs.Inventory
 {
     [CreateAssetMenu(fileName = "Name--(Item--Weapon)", menuName = "Inventory/Templates/Weapon", order = 0)]
     public class WeaponItem : BaseItem

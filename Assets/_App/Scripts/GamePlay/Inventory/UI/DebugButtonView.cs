@@ -74,16 +74,16 @@ namespace Ninsar.Inventory
             }
         }
     }
-}
 
-public enum EActionTypeButton
-{
-    Add,
-    Remove,
-    RemoveSelect,
-    FilterAll,
-    FilterEquipment,
-    FilterConsumable,
-    FilterQuest,
-    ClearAll
+    public enum EActionTypeButton
+    {
+        Add,
+        Remove,
+        RemoveSelect,
+        FilterAll,
+        FilterEquipment,
+        FilterConsumable,
+        FilterQuest,
+        ClearAll
+    }
 }

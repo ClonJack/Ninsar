@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
-using UnrealTeam.GamePlay.UI;
 
 namespace Ninsar.Inventory
 {
