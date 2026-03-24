@@ -30,6 +30,7 @@ namespace Ninsar.Inventory
             UpdateLabel();
             _button.onClick.AddListener(HandleClick);
         }
+        
         public void OnDestroy()
         {
             _button.onClick.RemoveListener(HandleClick);
@@ -68,6 +69,9 @@ namespace Ninsar.Inventory
                 case EActionTypeButton.FilterQuest:
                     Label.text = "FILTER: QUEST";
                     break;
+                case EActionTypeButton.ChangeCapacity:
+                    Label.text = $"CHANGE CAPACITY ON {Count}";
+                    break;
                 case EActionTypeButton.ClearAll:
                     Label.text = "CLEAR ALL";
                     break;
@@ -84,6 +88,7 @@ namespace Ninsar.Inventory
         FilterEquipment,
         FilterConsumable,
         FilterQuest,
+        ChangeCapacity ,
         ClearAll
     }
 }

@@ -21,6 +21,5 @@
 
             return item.Source.EItemCategory.HasFlag(_filter.Value);
         }
-        
     }
 }

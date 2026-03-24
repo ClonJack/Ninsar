@@ -11,6 +11,6 @@ namespace Ninsar.Configs.Inventory
         public ItemView ItemPrefab { get; private set; }
 
         [field: SerializeField] 
-        public int MaxItems { get; private set; } = 10;
+        public int StartCapacity { get; private set; } = 10;
     }
 }

@@ -28,7 +28,6 @@ namespace Ninsar.Inventory
                 _componentsCache[component.GetType()] = component;
             }
         }
-
         public bool TryGet<T>(out T result) where T : class, IItemComponent
         {
             if (_componentsCache == null)

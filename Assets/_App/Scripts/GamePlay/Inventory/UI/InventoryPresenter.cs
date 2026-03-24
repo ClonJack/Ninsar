@@ -1,16 +1,27 @@
 ﻿using System.Collections.Generic;
+using Ninsar.Inventory.Enum;
 using UnityEngine;
 
 namespace Ninsar.Inventory
 {
     public class InventoryPresenter : MonoBehaviour
     {
-        [field: SerializeField] public Transform Content { get; private set; }
+        [field: Header("Title")]
         [field: SerializeField] public TextView DescriptionLabel { get; private set; }
         [field: SerializeField] public TextView PropertyLabel { get; private set; }
+        
+        [field: Header("Info")]
         [field: SerializeField] public TextView FilterLabel { get; private set; }
-
-        [SerializeField] private List<DebugButtonView> _debugButtons = new();
+        [field: SerializeField] public TextView StateLabel { get; private set; }
+        [field: SerializeField] public TextView CapacityLabel { get; private set; }
+        
+        [field :Header("References")]
+        [field: SerializeField]
+        public Transform Content { get; private set; }
+        
+        [Header("Debug")]
+        [SerializeField]
+        private List<DebugButtonView> _debugButtons = new();
         
         private readonly InventoryItemPool _pool = new();
         private readonly InventoryItemFilter _filter = new();
@@ -29,36 +40,27 @@ namespace Ninsar.Inventory
 
             foreach (var debugButton in _debugButtons)
                 debugButton.OnClick += HandleClickDebugButton;
-
-            _storage.OnItemAdded += OnItemAdded;
-            _storage.OnItemRemoved += OnItemRemoved;
-            _storage.OnCapacityChanged += OnCapacityChanged;
+            
+            _storage.OnInventoryChanged+= HandleInventoryChanged;
+            
 
             UpdateFilterLabel();
             UpdateView();
+            
         }
         public void OnDestroy()
         {
             foreach (var debugButton in _debugButtons)
                 debugButton.OnClick -= HandleClickDebugButton;
-
-            if (_storage != null)
-            {
-                _storage.OnItemAdded -= OnItemAdded;
-                _storage.OnItemRemoved -= OnItemRemoved;
-                _storage.OnCapacityChanged -= OnCapacityChanged;
-            }
+            
+            _storage.OnInventoryChanged-= HandleInventoryChanged;
 
             foreach (var view in _pool.Pool)
                 view.OnClick -= HandleItemClick;
 
             _pool.Clear();
         }
-        private void OnItemAdded(ItemData item) 
-            => UpdateView();
-        private void OnItemRemoved(ItemData item) 
-            => UpdateView();
-        private void OnCapacityChanged(int used, int max) 
+        private void HandleInventoryChanged(InventoryEvent inventoryEvent) 
             => UpdateView();
         private void UpdateView()
         {
@@ -78,6 +80,8 @@ namespace Ninsar.Inventory
 
             if (_selectedItem != null) 
                 _selectedItem.Unselect();
+            
+            CapacityLabel.SetText($"{_storage.UsedSlots}/{_storage.MaxCapacity}");
             
             _selectedItem = null;
         }
@@ -178,6 +182,10 @@ namespace Ninsar.Inventory
                 case EActionTypeButton.ClearAll:
                     _storage.Clear();
                     ClearSelection();
+                    break;
+                
+                case EActionTypeButton.ChangeCapacity:
+                    _storage.SetMaxCapacity(buttonView.Count);
                     break;
             }
 

@@ -18,7 +18,7 @@ namespace Ninsar
         
         private void Init()
         {
-            _inventory = new InventoryStorage(_inventoryConfig.MaxItems);
+            _inventory = new InventoryStorage(_inventoryConfig.StartCapacity);
             
             ServicesLocator.Instance.Registration(_inventoryConfig);
             ServicesLocator.Instance.Registration(_inventory);
